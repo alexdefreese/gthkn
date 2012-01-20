@@ -41,6 +41,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
   
+  map.resources :users
+  
   map.root                    :controller => 'pages', :action => 'home'
   map.about     '/about',     :controller => 'pages', :action => 'about'
   map.events    '/events',    :controller => 'pages', :action => 'events'
