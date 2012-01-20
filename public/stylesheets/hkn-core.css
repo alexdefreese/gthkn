@@ -16,6 +16,16 @@ a:visited {
 	color: #39f;
 }
 
+h1 {
+	font-weight: bold;
+/*	color: #b43141;*/
+	color: #700;
+}
+
+h2 {
+	color: #1970a2;
+}
+
 body {
 	background: #eee;
 }
@@ -66,6 +76,10 @@ ul.navigation {
 	margin-top: 1em;
 	font-size: 120%;
 	padding: 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+	margin-bottom: 1em;
 }
 
 #footer {

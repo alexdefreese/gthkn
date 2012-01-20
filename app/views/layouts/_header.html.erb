@@ -1,16 +1,19 @@
 <div id="header">
-	<%= image_tag("hkn-banner.png", :class => "banner") %>
+	<% banner = image_tag("hkn-banner.png", :class => "banner") %>
+	<%= link_to banner, root_path %>
 	
 	<ul class="navigation">
-		<li><%= link_to 'Home', '/' %></li>
+		<li><%= link_to 'Home', root_path %></li>
 		<li>&nbsp|&nbsp</li>
-		<li><%= link_to 'About', '#' %></li>
+		<li><%= link_to 'About', about_path %></li>
 		<li>&nbsp|&nbsp</li>
-		<li><%= link_to 'Events', '#' %></li>
+		<li><%= link_to 'Events', events_path %></li>
 		<li>&nbsp|&nbsp</li>
-		<li><%= link_to 'Corporate Relations', '#' %></li>
+		<li><%= link_to 'Corporate Relations', corporate_path %></li>
 		<li>&nbsp|&nbsp</li>
-		<li><%= link_to 'Officers', '#' %></li>
+		<li><%= link_to 'Officers', officers_path %></li>
+		<li>&nbsp|&nbsp</li>
+		<li><%= link_to 'Contact Us', contact_path %>
 		<li>&nbsp|&nbsp</li>
 		<li><%= link_to 'Log in', '#' %></li>
 	</ul>
