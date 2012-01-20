@@ -3,28 +3,18 @@
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title><%= title %></title>
-		<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-		<%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
-		<!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
-		
-		<%= stylesheet_link_tag 'hkn-core', :media => 'screen' %>
+		<%= render 'layouts/stylesheets' %>
   </head>
   <body>
 		<div class="container">
 			
-			<div id="header">
-				<%= image_tag("hkn-banner.png", :class => "banner") %>
-			</div>
+			<%= render 'layouts/header' %>
 			
-			<div id="content">
+			<div id="content" class="round">
 				<%= yield %>
 			</div>
 			
-			<div id="footer">
-				<div class="footer_info">
-					777 Atlantic Avenue&nbsp|&nbspAtlanta, GA 30332-0250&nbsp|&nbspVan Leer C444&nbsp|&nbsp (404) 385-0935
-				</div>
-			</div>
+			<%= render 'layouts/footer' %>
 			
 		</div>
   </body>
