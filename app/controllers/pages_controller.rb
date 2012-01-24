@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def officers
     @title = "Officers"
+    @users = User.all
   end
 
   def events

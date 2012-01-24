@@ -1,2 +1,12 @@
-<h1>Pages#officers</h1>
-<p>Find me in app/views/pages/officers.html.erb</p>
+<h1>Officers</h1>
+
+<ul class="officers">
+	<% @users.each do |officer| %>
+		<% if officer.officer %>
+			<li>
+				<%= officer.name %> |
+				<%= officer.email %>
+			</li>
+		<% end %>
+	<% end %>
+</ul>
