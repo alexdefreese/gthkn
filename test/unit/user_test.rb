@@ -1,16 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  officer    :boolean
-#  initiate   :boolean
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
@@ -19,3 +6,19 @@ class UserTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  officer            :boolean
+#  initiate           :boolean
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#
+
