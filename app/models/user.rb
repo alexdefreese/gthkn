@@ -30,7 +30,14 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => email_regex
   validates_uniqueness_of :email, :case_sensitive => false
   
-  before_save :encrypt_password
+  before_save :set_default_values, :encrypt_password
+  
+  def set_default_values
+    self.initiate = false
+    self.officer = false
+    self.show_email = false
+    self.officer_position = ""
+  end
   
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
