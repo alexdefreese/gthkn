@@ -56,6 +56,7 @@ ActionController::Routing::Routes.draw do |map|
   map.corporate '/corporate', :controller => 'pages', :action => 'corporate'
   map.officers  '/officers',  :controller => 'pages', :action => 'officers'
   map.contact   '/contact',   :controller => 'pages', :action => 'contact'
+  map.admin     '/admin',     :controller => 'pages', :action => 'admin'
   
 
 end

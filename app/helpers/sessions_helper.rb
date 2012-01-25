@@ -36,4 +36,12 @@ module SessionsHelper
     flash[:notice] = "Please sign in to access this page."
     redirect_to signin_path
   end
+  
+  def authenticate
+    deny_access unless signed_in?
+  end
+  
+  def is_officer
+    redirect_to root_path unless current_user.officer
+  end
 end

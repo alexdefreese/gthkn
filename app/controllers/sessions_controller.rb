@@ -22,9 +22,6 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_path
   end
-  
-  def is_officer
-    redirect_to root_path unless current_user.officer
-  end
+
 
 end

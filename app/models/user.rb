@@ -18,7 +18,7 @@ require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :officer, :initiate,\
+  attr_accessible :name, :email, :officer, :initiate, :member,\
    :password, :password_confirmation, :show_email, :officer_position
   
   validates_confirmation_of :password
@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
   def set_default_values
     self.initiate = false if self.initiate.nil?
     self.officer = false if self.officer.nil?
+    self.member = false if self.member.nil?
     self.show_email = false if self.show_email.nil?
   end
   

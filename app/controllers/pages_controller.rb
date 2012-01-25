@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  before_filter :authenticate, :only => [:admin]
+  before_filter :is_officer, :only => [:admin]
+  
   def home
     @title = "Home"
   end
@@ -22,6 +25,10 @@ class PagesController < ApplicationController
   
   def about
     @title = "About"
+  end
+  
+  def admin
+    @title = "Admin Home"
   end
 
 end
