@@ -1,3 +1,8 @@
-<h2>
-	<%= h @user.name %>
-</h2>
+<h2><%= h @user.name %></h2>
+<% if @user.show_email %>
+	<p><b>Email:</b> <%= h @user.email %></p>
+<% end %>
+
+<% if current_user?(@user) %>
+	<%= link_to "edit", edit_user_path(current_user) %>
+<% end %>

@@ -13,9 +13,15 @@
 		<li>&nbsp|&nbsp</li>
 		<li><%= link_to 'Officers', officers_path %></li>
 		<li>&nbsp|&nbsp</li>
-		<li><%= link_to 'Contact Us', contact_path %>
+		<li><%= link_to 'Contact Us', contact_path %></li>
 		<li>&nbsp|&nbsp</li>
-		<li><%= link_to 'Log in', '#' %></li>
+		<% if signed_in? %>
+		<li><%= link_to 'Profile', current_user %></li>
+		<li>&nbsp|&nbsp</li>		
+		<li><%= link_to 'Log out', signout_path, :method => :delete %></li>
+		<% else %>
+		<li><%= link_to 'Log in', signin_path %></li>
+		<% end %>
 	</ul>
 
 </div>

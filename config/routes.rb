@@ -40,6 +40,10 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   
   map.resources :users
+  map.resources :sessions, :only => [:new, :create, :destroy]
+  
+  map.signin  '/signin',      :controller => 'sessions', :action => 'new'
+  map.signout '/signout',     :controller => 'sessions', :action => 'destroy'
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

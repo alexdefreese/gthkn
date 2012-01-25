@@ -18,7 +18,8 @@ require 'digest'
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :officer, :initiate, :password, :password_confirmation
+  attr_accessible :name, :email, :officer, :initiate,\
+   :password, :password_confirmation, :show_email, :officer_position
   
   validates_confirmation_of :password
   validates_presence_of :password
@@ -33,14 +34,18 @@ class User < ActiveRecord::Base
   before_save :set_default_values, :encrypt_password
   
   def set_default_values
-    self.initiate = false
-    self.officer = false
-    self.show_email = false
-    self.officer_position = ""
+    self.initiate = false if self.initiate.nil?
+    self.officer = false if self.officer.nil?
+    self.show_email = false if self.show_email.nil?
   end
   
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
+  end
+  
+  def remember_me!
+    self.remember_token = encrypt("#{salt}--#{id}--#{Time.now.utc}")
+    save_without_validation
   end
   
   def self.authenticate(email, submitted_password)
@@ -51,8 +56,10 @@ class User < ActiveRecord::Base
   
   private
     def encrypt_password
-      self.salt = make_salt
-      self.encrypted_password = encrypt(password)
+      unless password.nil?
+        self.salt = make_salt
+        self.encrypted_password = encrypt(password)
+      end
     end
     
     def encrypt(string)

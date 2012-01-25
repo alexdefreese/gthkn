@@ -1,0 +1,37 @@
+<h1>Edit user</h1>
+
+<% form_for(@user) do |f| %>
+	<%= f.error_messages %>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+	</div>
+	<div class="field">
+		<%= f.label :show_email %><br />
+		<%= f.radio_button :show_email, true %><%= f.label "Yes" %>
+		<%= f.radio_button :show_email, false %><%= f.label "No" %>
+	</div>
+	
+	<% if @user.officer %>
+		<div class="field">
+			<%= f.label :officer_position %>
+			<%= f.text_field :officer_position %>
+		</div>
+	<% end %>
+		<div class="field">
+		<%= f.label :password %><br />
+		<%= f.password_field :password %>
+	</div>
+	<div class="field">
+		<%= f.label :password_confirmation, "Confirmation" %><br />
+		<%= f.password_field :password_confirmation %>
+	</div>
+	
+	<div class="field">
+		<%= f.submit "Update" %>
+	</div>
+<% end %>
