@@ -21,6 +21,12 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :officer, :initiate, :member,\
    :password, :password_confirmation, :show_email, :officer_position
   
+  has_many :blogposts
+  
+  validates_presence_of :content, :user_id
+  
+  default_scope :order => 'created_at DESC'
+  
   validates_confirmation_of :password
   validates_presence_of :password
   

@@ -1,2 +1,19 @@
 <h1>Eta Kappa Nu</h1>
 <p><a href="http://www.gthkn.com">Old Website</a></p>
+
+<% if is_officer? %>
+	<table class="blogpost_form">
+		<tr>
+			<td class="main">
+				<h2 class="blogpost">Create new Blog Post</h2>
+				<%= render 'pages/blogpost_form' %>
+			</td>
+		</tr>
+	</table>
+<% end %>
+
+<% unless @blogposts.nil? or @blogposts.empty? %>
+	<table class="blog">
+		<%= render :partial => 'blogposts/blogpost', :collection => @blogposts %>
+	</table>
+<% end %>

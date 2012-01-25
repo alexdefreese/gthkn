@@ -41,6 +41,10 @@ module SessionsHelper
     deny_access unless signed_in?
   end
   
+  def is_officer?
+    current_user.officer
+  end
+  
   def is_officer
     redirect_to root_path unless current_user.officer
   end
