@@ -1,12 +1,12 @@
 <h1>Eta Kappa Nu</h1>
-<p><a href="http://www.gthkn.com">Old Website</a></p>
-
-<% if is_officer? %>
-	<span class="announcement round">Hello <%= current_user.name %>, make a <%= link_to "new blog post?", new_blogpost_path %></span>
-<% end %>
 
 <% unless @blogposts.nil? or @blogposts.empty? %>
 	<h2>Announcements</h2>
+	
+	<% if is_officer? %>
+		<span class="announcement round">Hello <%= current_user.name %>, make a <%= link_to "new blog post?", new_blogpost_path %></span>
+	<% end %>
+	
 	<div class="blog">
 		<%= render :partial => 'blogposts/blogpost', :collection => @blogposts %>
 	</div>

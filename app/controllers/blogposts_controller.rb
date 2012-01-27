@@ -3,6 +3,7 @@ class BlogpostsController < ApplicationController
   before_filter :is_officer
   
   def new
+    @title = "New Blog Post"
     @blogpost = Blogpost.new if is_officer?
   end
   
