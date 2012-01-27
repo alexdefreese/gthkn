@@ -24,6 +24,8 @@ h1 {
 
 h2 {
 	color: #1970a2;
+	margin-bottom: 3px;
+	padding-top: 1em;
 }
 
 body {
@@ -98,4 +100,73 @@ ul.navigation {
 
 .calendar {
 	padding: 2em;
+}
+
+.announcement {
+	border-style: solid;
+	border-color: #ff0;
+	border-width: 1px;
+	background-color: #ffc;
+	padding: 0.5em;
+	width: 100%;
+}
+
+.blog {
+	padding: 1em;
+	display: block;
+}
+
+.post {
+	display: block;
+	padding: 5px;
+}
+
+.post div.title {
+	display: block;
+	background-color: #700;
+	padding: 5px;
+	color: #fff;
+	font-size: 140%;
+	font-weight: bold;
+	min-height: 1em;
+}
+
+.post div.title span.title_text {
+	padding-left: 0.5em;
+	color: #fff;
+	font-size: 120%;
+	font-weight: bold;
+	padding: 3px;
+}
+
+.post div.title span.edit_post {
+	float: right;
+	font-size: 50%;
+	padding-right: 1em;
+	vertical-align: middle;
+	
+}
+
+.post div.post_content {
+	margin-top: 2px;
+	border: 1px solid #000;
+	background-color: white;
+	margin-bottom: 2em;
+}
+
+.post div.post_content span.content {
+	display: inline-block;
+	margin: 1em;
+}
+
+.post div.post_content span.author {
+	float: right;
+	margin-right: 4px;
+	font-size: 70%;
+}
+
+.post div.post_content span.timestamp {
+	display: block;
+	float: right;
+	font-size: 70%;
 }

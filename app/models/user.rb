@@ -23,10 +23,6 @@ class User < ActiveRecord::Base
   
   has_many :blogposts
   
-  validates_presence_of :content, :user_id
-  
-  default_scope :order => 'created_at DESC'
-  
   validates_confirmation_of :password
   validates_presence_of :password
   
@@ -44,6 +40,7 @@ class User < ActiveRecord::Base
     self.officer = false if self.officer.nil?
     self.member = false if self.member.nil?
     self.show_email = false if self.show_email.nil?
+    return true
   end
   
   def has_password?(submitted_password)

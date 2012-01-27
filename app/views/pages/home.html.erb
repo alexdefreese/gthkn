@@ -2,18 +2,12 @@
 <p><a href="http://www.gthkn.com">Old Website</a></p>
 
 <% if is_officer? %>
-	<table class="blogpost_form">
-		<tr>
-			<td class="main">
-				<h2 class="blogpost">Create new Blog Post</h2>
-				<%= render 'pages/blogpost_form' %>
-			</td>
-		</tr>
-	</table>
+	<span class="announcement round">Hello <%= current_user.name %>, make a <%= link_to "new blog post?", new_blogpost_path %></span>
 <% end %>
 
 <% unless @blogposts.nil? or @blogposts.empty? %>
-	<table class="blog">
+	<h2>Announcements</h2>
+	<div class="blog">
 		<%= render :partial => 'blogposts/blogpost', :collection => @blogposts %>
-	</table>
+	</div>
 <% end %>

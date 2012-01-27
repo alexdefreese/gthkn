@@ -42,6 +42,7 @@ module SessionsHelper
   end
   
   def is_officer?
+    return false if current_user.nil?
     current_user.officer
   end
   

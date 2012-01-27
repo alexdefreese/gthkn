@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   def home
     @title = "Home"
     @blogposts = Blogpost.all
-    @blogpost = Blogpost.new if is_officer?
   end
 
   def contact
