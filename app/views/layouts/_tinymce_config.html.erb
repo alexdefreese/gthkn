@@ -1,1 +1,7 @@
-<%= javascript_include_tag %>
+<%= javascript_include_tag 'tiny_mce/tiny_mce' %>
+<script language="javascript" type="text/javascript">
+	tinyMCE.init( {
+		theme: "simple",
+		mode: "textareas"
+	});
+</script>

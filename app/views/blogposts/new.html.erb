@@ -1,5 +1,7 @@
 <h1>New Blogpost</h1>
 
+<%= render 'layouts/tinymce_config' %>
+
 <% form_for @blogpost do |f| %>
 	<%= f.error_messages %>
 	<div class="field">
