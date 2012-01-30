@@ -10,4 +10,6 @@
 	<div class="blog">
 		<%= render :partial => 'blogposts/blogpost', :collection => @blogposts %>
 	</div>
+	
+	<%= will_paginate @blogposts%>
 <% end %>

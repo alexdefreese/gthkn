@@ -1,16 +1,8 @@
-<div class="post">
-	<div class="title round">
-		<span class="title_text"><%= blogpost.title ||= "No Title" %></span>
-		<% if is_officer? %>
-			<span class="edit_post"><%= link_to "Edit this post", edit_blogpost_path(blogpost) %></span>
-		<% end %>
-	</div>
-	
-	<div class="post_content round">
-		<span class="author">Written by <%= link_to blogpost.user.name, blogpost.user %>.</span>
-		
-		<span class="content"><%= blogpost.content %></span>
-
-		<span class="timestamp">Posted <%= time_ago_in_words(blogpost.created_at) %> ago.</span>
-	</div>
+<div class="post round">
+	<span class="title_text"><%= blogpost.title ||= "No Title" %></span>
+	<% if is_officer? %>
+		<span class="edit_post round"><%= link_to "Edit this post", edit_blogpost_path(blogpost) %></span>
+	<% end %>
+	<span class="content"><%= blogpost.content %></span>
+	<span class="timestamp">Posted by <%= link_to blogpost.user.name, blogpost.user %> <%= time_ago_in_words(blogpost.created_at) %> ago.</span>
 </div>

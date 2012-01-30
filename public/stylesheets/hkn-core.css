@@ -18,7 +18,6 @@ a:visited {
 
 h1 {
 	font-weight: bold;
-/*	color: #b43141;*/
 	color: #700;
 }
 
@@ -29,7 +28,7 @@ h2 {
 }
 
 body {
-	background: #eee;
+	background: #ccc;
 }
 
 #header {
@@ -39,7 +38,7 @@ body {
 
 .navigation {
 	white-space: nowrap;
-	background: #ccc;
+	background: #bbb;
 	padding: 0 0.7em;
 	border-style: solid;
 	border-width: 1px;
@@ -74,7 +73,7 @@ ul.navigation {
 }
 
 #content {
-	background: #ffffff;
+	background: #eee;
 	margin-top: 1em;
 	font-size: 120%;
 	padding: 20px;
@@ -117,57 +116,41 @@ ul.navigation {
 }
 
 .post {
-	display: block;
-	padding: 5px;
-}
-
-.post div.title {
-	display: block;
-	background-color: #700;
-	padding: 5px;
-	color: #fff;
-	font-size: 140%;
-	font-weight: bold;
-	min-height: 1em;
-}
-
-.post div.title span.title_text {
-	padding-left: 0.5em;
-	color: #fff;
-	font-size: 120%;
-	font-weight: bold;
-	padding: 3px;
-}
-
-.post div.title span.edit_post {
-	float: right;
-	font-size: 50%;
-	padding-right: 1em;
-	vertical-align: middle;
-	
-}
-
-.post div.post_content {
+	padding: 1em;
 	margin-top: 2px;
 	border: 1px solid #000;
 	background-color: white;
 	margin-bottom: 2em;
 }
 
-.post div.post_content span.content {
-	display: inline-block;
-	margin: 1em;
+.post span.title_text {
+	padding-left: 0.5em;
+	color: #700;
+	font-size: 300%;
+	font-weight: bold;
+	padding: 3px;
 }
 
-.post div.post_content span.author {
+.post span.edit_post {
 	float: right;
-	margin-right: 4px;
-	font-size: 80%;
+	font-size: 70%;
+	padding: 5px;
+	vertical-align: middle;
+	background-color: #cff;
+	border: 1px solid #39f;
 }
 
-.post div.post_content span.timestamp {
+.post span.edit_post:hover {
+	background-color: #fff;
+}
+
+.post span.content {
 	display: block;
-	text-align: right;
+	padding: 1em;
+}
+
+.post span.timestamp {
+	display: block;
 	padding-right: 4px;
 	padding-bottom: 5px;
 	font-size: 80%;
