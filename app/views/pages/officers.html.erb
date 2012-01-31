@@ -1,18 +1,23 @@
 <h1>Officers</h1>
+<div class="officers">
+<table>
+	<% @users.each do |u| %>
+		<% if u.officer %>
+			<tr>
+				<td>
 
-<ul class="officers">
-	<% @users.each do |officer| %>
-		<% if officer.officer %>
-			<li>
-				<%= officer.name %> |
-				<%= officer.email %> |
-				<%= officer.officer_position %>
-			</li>
+					<span class="name"><%= u.name %></span>
+					<span class="position"><%= u.officer_position %></span>
+					<span class="email"><%= mail_to u.email, u.email %></span>
+
+				</td>
+			</tr>
 		<% end %>
 	<% end %>
-</ul>
+</table>
+</div>
 
 <h2>Office Hours</h2>
 
 <!-- Google Calendar linked to HKN Officers calendar -->
-<iframe class="calendar" src="https://www.google.com/calendar/embed?showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=5ide81ik2cv6lq9atsqthlsals%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe class="calendar round" src="https://www.google.com/calendar/embed?showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23EEEEEE&amp;src=5ide81ik2cv6lq9atsqthlsals%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>

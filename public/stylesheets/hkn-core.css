@@ -99,6 +99,7 @@ ul.navigation {
 
 .calendar {
 	padding: 2em;
+	border: 1px solid black;
 }
 
 .announcement {
@@ -154,4 +155,39 @@ ul.navigation {
 	padding-right: 4px;
 	padding-bottom: 5px;
 	font-size: 80%;
+}
+
+.officers {
+	text-align: center;
+}
+
+.officers table {
+	border: 1px solid black;
+	background-color: #fff;
+}
+
+.officers table tr {
+	padding: 1em;
+}
+
+.officers table tr td {
+	padding: 1em;
+}
+
+.officers table tr td span.name {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.officers table tr td span.position {
+	display: block;
+	text-align: center;
+	font-size: 120%;
+}
+
+.officers table tr td span.email {
+	display: block;
+	text-align: center;
 }
