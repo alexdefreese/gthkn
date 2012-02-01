@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   
   def home
     @title = "Home"
-    @blogposts = Blogpost.paginate(:page => params[:page])
+    @blogposts = Blogpost.paginate(:page => params[:page], :per_page => 10)
   end
 
   def contact

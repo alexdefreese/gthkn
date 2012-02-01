@@ -3,6 +3,6 @@
 	<% if current_user_is_officer? %>
 		<span class="edit_post round"><%= link_to "Edit this post", edit_blogpost_path(blogpost) %></span>
 	<% end %>
-	<span class="content"><%= blogpost.content %></span>
+	<span class="content"><%= raw blogpost.content %></span>
 	<span class="timestamp">Posted by <%= link_to blogpost.user.name, blogpost.user %> <%= time_ago_in_words(blogpost.created_at) %> ago.</span>
 </div>

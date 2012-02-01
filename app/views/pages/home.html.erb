@@ -8,8 +8,9 @@
 	<% end %>
 	
 	<div class="blog">
+		<%= will_paginate @blogposts %>
 		<%= render :partial => 'blogposts/blogpost', :collection => @blogposts %>
 	</div>
 	
-	<%= will_paginate @blogposts%>
+	<%= will_paginate @blogposts %>
 <% end %>
