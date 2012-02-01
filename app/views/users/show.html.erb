@@ -1,5 +1,5 @@
 <h2><%= h @user.name %></h2>
-<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url unless @user.avatar_file_name.nil? %>
 <% if @user.show_email %>
 	<p><b>Email:</b> <%= h @user.email %></p>
 <% end %>

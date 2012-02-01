@@ -19,7 +19,7 @@ require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :officer, :initiate, :member,\
-   :password, :password_confirmation, :show_email, :officer_position
+   :password, :password_confirmation, :show_email, :officer_position, :avatar
   
   has_many :blogposts
   

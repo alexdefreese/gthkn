@@ -13,7 +13,7 @@
 	
 	<div class="field">
 		<%= f.label :avatar %>
-		<%= image_tag @user.avatar.url(:medium) %>
+		<%= image_tag @user.avatar.url(:medium) unless @user.avatar_file_name.nil? %>
 		<%= f.file_field :avatar %>
 	</div>
 	
