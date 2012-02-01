@@ -1,8 +1,6 @@
 module SessionsHelper
   def sign_in(user)
-    user.remember_me!
-    cookies[:remember_token] = {:value => user.remember_token,
-                                :expires => 20.years.from_now.utc}
+    cookies.permanent.signed[:remember_token] = [user.id, user.salt]
     self.current_user = user
   end
   
@@ -17,11 +15,6 @@ module SessionsHelper
   
   def current_user
     @current_user ||= user_from_remember_token
-  end
-  
-  def user_from_remember_token
-    remember_token = cookies[:remember_token]
-    User.find_by_remember_token(remember_token) unless remember_token.nil?
   end
   
   def signed_in?
@@ -49,4 +42,14 @@ module SessionsHelper
   def deny_unless_officer
     redirect_to root_path unless current_user.officer
   end
+  
+  private
+    
+    def user_from_remember_token
+      User.authenticate_with_salt(*remember_token)
+    end
+    
+    def remember_token
+      cookies.signed[:remember_token] || [nil, nil]
+    end
 end
