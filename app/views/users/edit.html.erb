@@ -10,6 +10,13 @@
 		<%= f.label :email %><br />
 		<%= f.text_field :email %>
 	</div>
+	
+	<div class="field">
+		<%= f.label :avatar %>
+		<%= image_tag @user.avatar.url(:medium) %>
+		<%= f.file_field :avatar %>
+	</div>
+	
 	<div class="field">
 		<%= f.label :show_email %><br />
 		<%= f.radio_button :show_email, true %><%= f.label "Yes" %>

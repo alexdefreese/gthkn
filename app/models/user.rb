@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   
   has_many :blogposts
   
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
   validates_confirmation_of :password
   validates_presence_of :password
   
@@ -49,7 +51,7 @@ class User < ActiveRecord::Base
   
   def remember_me!
     self.remember_token = encrypt("#{salt}--#{id}--#{Time.now.utc}")
-    save_without_validation
+    save
   end
   
   def self.authenticate(email, submitted_password)
