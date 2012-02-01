@@ -14,7 +14,7 @@ Gthkn::Application.routes.draw do
   
   match '/new_blogpost' => 'blogposts#new', :as => :new_blogpost
   
-  match '/' => 'pages#home'
+  root :to => 'pages#home'
   match '/about' => 'pages#about', :as => :about
   match '/events' => 'pages#events', :as => :events
   match '/corporate' => 'pages#corporate', :as => :corporate

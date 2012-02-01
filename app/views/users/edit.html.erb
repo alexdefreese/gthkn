@@ -1,6 +1,6 @@
 <h1>Edit user <%= h @user.name %></h1>
 
-<% form_for(@user) do |f| %>
+<%= form_for(@user) do |f| %>
 	<%= f.error_messages %>
 	<div class="field">
 		<%= f.label :name %><br />
