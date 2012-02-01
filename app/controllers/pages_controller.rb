@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_filter :authenticate, :only => [:admin]
-  before_filter :is_officer, :only => [:admin]
+  before_filter :deny_unless_officer, :only => [:admin]
   
   def home
     @title = "Home"
