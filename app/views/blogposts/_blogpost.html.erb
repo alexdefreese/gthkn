@@ -1,6 +1,6 @@
 <div class="post round">
 	<span class="title_text"><%= blogpost.title ||= "No Title" %></span>
-	<% if is_officer? %>
+	<% if current_user_is_officer? %>
 		<span class="edit_post round"><%= link_to "Edit this post", edit_blogpost_path(blogpost) %></span>
 	<% end %>
 	<span class="content"><%= blogpost.content %></span>

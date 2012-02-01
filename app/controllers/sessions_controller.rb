@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   
-  before_filter :is_officer, :only =>[]
+  before_filter :deny_unless_officer, :only =>[]
 
   def new
     @title = "Sign in"

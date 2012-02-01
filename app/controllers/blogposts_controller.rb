@@ -1,10 +1,10 @@
 class BlogpostsController < ApplicationController
   
-  before_filter :is_officer
+  before_filter :deny_unless_officer
   
   def new
     @title = "New Blog Post"
-    @blogpost = Blogpost.new if is_officer?
+    @blogpost = Blogpost.new if current_user_is_officer?
   end
   
   def create

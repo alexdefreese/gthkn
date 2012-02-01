@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:edit, :update]
-  before_filter :correct_user, :only => [:edit, :update]
+  before_filter :correct_user_or_officer, :only => [:edit, :update]
+  before_filter :deny_unless_officer, :only =>[:user_admin]
   
   def show
     @user = User.find(params[:id])
@@ -39,6 +40,11 @@ class UsersController < ApplicationController
   def index
   end
   
+  def user_admin
+    @users = User.all
+    @title = "User Admin"
+  end
+  
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -57,6 +63,12 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
+    end
+    
+    def correct_user_or_officer
+      if !current_user_is_officer?
+        correct_user
+      end
     end
 
 end
