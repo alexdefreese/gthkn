@@ -258,3 +258,14 @@ div.field, div.actions {
 .user_search div.submit {
 	padding: 3px;
 }
+
+/*User Admin*/
+ul.user_list {
+	padding: 3px;
+	margin-left: 1em;
+	min-height: 5em;
+}
+
+ul.user_list li.user {
+	padding: 3px;
+}
