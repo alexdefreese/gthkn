@@ -20,13 +20,17 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :officer, :initiate, :member,\
    :password, :password_confirmation, :show_email, :officer_position, :avatar
+   
+  default_scope :order => 'email ASC'
   
   has_many :blogposts
   
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
-  validates_confirmation_of :password
-  validates_presence_of :password
+  # Validations
+  
+  validates_confirmation_of :password, :on => :create
+  validates_presence_of :password, :on => :create
   
   email_regex = /\A[\w+\-.]+@(gatech.edu|mail.gatech.edu)\z/i
   
@@ -53,6 +57,18 @@ class User < ActiveRecord::Base
     user = find_by_email(email)
     return nil if user.nil?
     return user if user.has_password?(submitted_password)
+  end
+  
+  def self.search(search, type)
+    if (search)
+      if (type)
+        find(:all, :conditions => ["#{type} LIKE ?", "%#{search}%"])
+      else
+        find(:all, :conditions => ["email LIKE ?", "%#{search}%"])
+      end
+    else
+      find(:all)
+    end
   end
   
   def self.authenticate_with_salt(id, cookie_salt)

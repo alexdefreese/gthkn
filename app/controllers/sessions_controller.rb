@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
       render 'new'
     else
       sign_in user
-      redirect_to user
+      redirect_to user unless current_user_is_officer?
+      redirect_to admin_path if current_user_is_officer?
     end
   end
   

@@ -7,6 +7,7 @@ Gthkn::Application.routes.draw do
   match '/signout' => 'sessions#destroy', :as => :signout
   
   match '/admin/user_admin' => 'users#user_admin', :as => :user_admin
+  match '/admin/user_admin/search' => 'users#user_admin_search', :as => :user_admin_search
   
   match '/:controller(/:action(/:id))'
   

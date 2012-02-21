@@ -21,12 +21,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if params[:commit] == 'Cancel'
-      flash[:notice] = "Cancelled Edit."
-      redirect_to @user
+      flash[:notice] = "Cancelled Edit." 
+      redirect_to user_admin_path if current_user_is_officer?
+      redirect_to @user if !current_user_is_officer?
     else
+      
       if @user.update_attributes(params[:user])
         flash[:success] = "Profile updated."
-        redirect_to @user
+        redirect_to user_admin_path if current_user_is_officer?
+        redirect_to @user if !current_user_is_officer?
       else
         @title = "Edit user"
         render 'edit'
@@ -41,8 +44,13 @@ class UsersController < ApplicationController
   end
   
   def user_admin
-    @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 40)
     @title = "User Admin"
+  end
+  
+  def user_admin_search
+    @users = User.search(params[:search], params[:type])
+    @title = "Admin Search Results"
   end
   
   def create

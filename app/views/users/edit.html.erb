@@ -22,6 +22,20 @@
 		<%= f.radio_button :show_email, true %><%= f.label "Yes" %>
 		<%= f.radio_button :show_email, false %><%= f.label "No" %>
 	</div>
+
+	<% if current_user_is_officer? %>
+		<div class="field">
+			<%= f.label :initiate %>
+			<%= f.radio_button :initiate, true %><%= f.label "Yes" %>
+			<%= f.radio_button :initiate, false %><%= f.label "No" %>
+		</div>
+	
+		<div class="field">
+			<%= f.label :officer %>
+			<%= f.radio_button :officer, true %><%= f.label "Yes" %>
+			<%= f.radio_button :officer, false %><%= f.label "No" %>
+		</div>
+	<% end %>
 	
 	<% if @user.officer %>
 		<div class="field">
@@ -29,14 +43,6 @@
 			<%= f.text_field :officer_position %>
 		</div>
 	<% end %>
-		<div class="field">
-		<%= f.label :password %><br />
-		<%= f.password_field :password %>
-	</div>
-	<div class="field">
-		<%= f.label :password_confirmation, "Confirmation" %><br />
-		<%= f.password_field :password_confirmation %>
-	</div>
 	
 	<div class="field">
 		<%= f.submit "Update" %>
