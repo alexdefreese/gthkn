@@ -1,7 +1,11 @@
 <h1>Search Results</h1>
 
+<%= link_to "Back", user_admin_path %>
+
+<%= render 'user_search_form' %>
+
 <ul>
 	<% @users.each do |user| %>
-		<li><%= user.name %></li>
+		<li><%= link_to user.name, edit_user_path(user) %></li>
 	<% end %>
 </ul>

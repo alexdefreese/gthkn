@@ -1,16 +1,6 @@
 <h1>User Admin</h1>
 
-<%= form_tag user_admin_search_path, :method => 'get' do %>
-	<%= label_tag "Search for a user:" %>
-	<%= text_field_tag :search %>
-	<div class="searchtype">
-		<%= label_tag "Email" %>
-		<%= radio_button_tag :type, "email" %>
-		<%= label_tag "Name" %>
-		<%= radio_button_tag :type, "name" %>
-	</div>
-	<%= submit_tag "Submit", :name => nil %>
-<% end %>
+<%= render 'user_search_form' %>
 
 <%= will_paginate @users %>
 

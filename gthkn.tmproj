@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/models/user.rb</string>
+	<string>app/views/users/user_admin.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -112,14 +112,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>30</integer>
+				<integer>4</integer>
 				<key>line</key>
-				<integer>66</integer>
+				<integer>85</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>58</integer>
+			<integer>49</integer>
 		</dict>
 		<key>app/views/blogposts/_blogpost.html.erb</key>
 		<dict>
@@ -191,6 +191,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/views/users/new.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app/views/users/show.html.erb</key>
 		<dict>
 			<key>caret</key>
@@ -224,9 +238,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>5</integer>
+				<integer>26</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>4</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -283,6 +297,7 @@
 		<string>app/controllers/blogposts_controller.rb</string>
 		<string>app/views/pages/admin.html.erb</string>
 		<string>app/views/users/user_admin.html.erb</string>
+		<string>app/views/users/new.html.erb</string>
 		<string>app/models/user.rb</string>
 		<string>app/views/users/edit.html.erb</string>
 		<string>app/controllers/users_controller.rb</string>
