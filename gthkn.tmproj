@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/users/user_admin.html.erb</string>
+	<string>db/migrate/20120120161018_create_users.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,14 +21,28 @@
 	<integer>234</integer>
 	<key>metaData</key>
 	<dict>
+		<key>app/assets/stylesheets/hkn-core.css</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>15</integer>
+				<key>line</key>
+				<integer>265</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>250</integer>
+		</dict>
 		<key>app/controllers/blogposts_controller.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>17</integer>
 				<key>line</key>
-				<integer>23</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -84,14 +98,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>54</integer>
+				<integer>7</integer>
 				<key>line</key>
-				<integer>51</integer>
+				<integer>79</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>41</integer>
+			<integer>0</integer>
 		</dict>
 		<key>app/helpers/sessions_helper.rb</key>
 		<dict>
@@ -112,14 +126,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>4</integer>
+				<integer>21</integer>
 				<key>line</key>
-				<integer>85</integer>
+				<integer>26</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>49</integer>
+			<integer>14</integer>
 		</dict>
 		<key>app/views/blogposts/_blogpost.html.erb</key>
 		<dict>
@@ -149,6 +163,36 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/views/layouts/_tinymce_config.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>9</integer>
+				<key>line</key>
+				<integer>14</integer>
+			</dict>
+			<key>columnSelection</key>
+			<false/>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>8</integer>
+				<key>line</key>
+				<integer>14</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>9</integer>
+				<key>line</key>
+				<integer>14</integer>
+			</dict>
+		</dict>
 		<key>app/views/pages/admin.html.erb</key>
 		<dict>
 			<key>caret</key>
@@ -163,28 +207,56 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/pages/home.html.erb</key>
+		<key>app/views/users/_user_admin_list.html.erb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>40</integer>
+				<integer>5</integer>
 				<key>line</key>
-				<integer>19</integer>
+				<integer>3</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
-		<key>app/views/users/edit.html.erb</key>
+		<key>app/views/users/_user_search_form.html.erb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>8</integer>
 				<key>line</key>
-				<integer>30</integer>
+				<integer>14</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/users/delete.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/users/edit.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>10</integer>
+				<key>line</key>
+				<integer>44</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -219,7 +291,21 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/users/user_admin.html.erb</key>
+		<key>db/migrate/20120120161018_create_users.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>18</integer>
+				<key>line</key>
+				<integer>5</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>doc/app/BlogpostsController.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -233,33 +319,19 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/users/user_admin_search.html.erb</key>
+		<key>doc/app/UsersController.html</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>26</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-		</dict>
-		<key>config/routes.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>90</integer>
-				<key>line</key>
-				<integer>9</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>1</integer>
 		</dict>
 		<key>log/development.log</key>
 		<dict>
@@ -291,30 +363,41 @@
 				<integer>3449</integer>
 			</dict>
 		</dict>
+		<key>vendor/plugins/rails_upgrade/test/routes_upgrader_test.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>app/controllers/blogposts_controller.rb</string>
-		<string>app/views/pages/admin.html.erb</string>
-		<string>app/views/users/user_admin.html.erb</string>
-		<string>app/views/users/new.html.erb</string>
-		<string>app/models/user.rb</string>
-		<string>app/views/users/edit.html.erb</string>
+		<string>db/migrate/20120120161018_create_users.rb</string>
+		<string>app/assets/stylesheets/hkn-core.css</string>
+		<string>doc/app/UsersController.html</string>
 		<string>app/controllers/users_controller.rb</string>
-		<string>app/views/users/user_admin_search.html.erb</string>
-		<string>config/routes.rb</string>
-		<string>app/views/pages/home.html.erb</string>
-		<string>app/views/layouts/_header.html.erb</string>
-		<string>app/views/blogposts/_blogpost.html.erb</string>
-		<string>app/controllers/pages_controller.rb</string>
-		<string>app/controllers/sessions_controller.rb</string>
-		<string>log/development.log</string>
-		<string>app/helpers/sessions_helper.rb</string>
+		<string>doc/app/BlogpostsController.html</string>
+		<string>app/views/users/edit.html.erb</string>
+		<string>app/views/users/delete.html.erb</string>
+		<string>app/views/users/new.html.erb</string>
 		<string>app/views/users/show.html.erb</string>
+		<string>vendor/plugins/rails_upgrade/test/routes_upgrader_test.rb</string>
+		<string>app/views/layouts/_tinymce_config.html.erb</string>
+		<string>app/controllers/blogposts_controller.rb</string>
+		<string>app/models/user.rb</string>
+		<string>app/views/pages/admin.html.erb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{241, 314}, {857, 432}}</string>
+	<string>{{406, 208}, {877, 480}}</string>
 </dict>
 </plist>
