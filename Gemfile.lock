@@ -127,6 +127,7 @@ DEPENDENCIES
   jquery-rails
   json
   paperclip
+  pg
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)
   uglifier
