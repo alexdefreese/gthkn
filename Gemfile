@@ -6,6 +6,7 @@ gem 'rails'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'json'
+
 group :release do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
