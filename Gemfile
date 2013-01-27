@@ -1,19 +1,25 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'json'
-gem 'pg'
-gem 'activerecord-postgresql-adapter'
+group :release do
+  gem 'pg'
+  gem 'activerecord-postgresql-adapter'
+end
+
+group :development do
+  gem 'sqlite3'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
 end
 
@@ -28,8 +34,8 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate'
 
-gem "ckeditor", "3.7.0.rc2"
+gem "ckeditor"
 
 gem "paperclip"
