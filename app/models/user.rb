@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :on => :create
   validates_presence_of :password, :on => :create
   
-  email_regex = /\A[\w+\-.]+@(gatech.edu|mail.gatech.edu)\z/i
+  email_regex = /\A[\w+\-.]+@(.*)?gatech.edu\z/i
   
   validates_presence_of :name, :email
   validates_length_of :name, :maximum => 50
