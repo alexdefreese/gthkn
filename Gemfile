@@ -26,6 +26,17 @@ end
 
 gem 'jquery-rails'
 
+# Use unicorn as the web server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'ruby-debug'
+
 gem 'will_paginate'
-gem 'tinymce-rails'
+
+gem "ckeditor"
+
 gem "paperclip"
