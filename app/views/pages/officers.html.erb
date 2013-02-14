@@ -5,7 +5,6 @@
 		<% if u.officer %>
 			<tr>
 				<td>
-					<span class="avatar"><%= image_tag(u.avatar.url(:medium)) unless u.avatar_file_name.nil? %></span>
 					<span class="name"><%= u.name %></span>
 					<span class="position"><%= u.officer_position %></span>
 					<span class="email"><%= mail_to u.email, u.email, :encode => "javascript" %></span>
