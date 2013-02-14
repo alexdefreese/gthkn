@@ -5,9 +5,6 @@ Gthkn::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
   resources :blogposts, :only => [:create, :edit, :update, :destroy]
   
-  match '/signin' => 'sessions#new', :as => :signin
-  match '/signout' => 'sessions#destroy', :as => :signout
-  
   match '/admin/user_admin' => 'users#user_admin', :as => :user_admin
   match '/admin/user_admin/search' => 'users#user_admin_search', :as => :user_admin_search
   
