@@ -1,4 +1,6 @@
 Gthkn::Application.routes.draw do
+  devise_for :users
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :blogposts, :only => [:create, :edit, :update, :destroy]
