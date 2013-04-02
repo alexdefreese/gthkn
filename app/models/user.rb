@@ -25,9 +25,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessor :password
-  attr_accessible :name, :email, :officer, :initiate, :member,\
-   :password, :password_confirmation, :show_email, :officer_position, :avatar
+  attr_accessible :name, :officer, :initiate, :member,\
+           :password_confirmation, :show_email, :officer_position, :avatar
    
   default_scope :order => 'email ASC'
   
