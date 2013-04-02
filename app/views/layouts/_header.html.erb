@@ -17,7 +17,7 @@
 		<li>&nbsp|&nbsp</li>
 		
 		<% if user_signed_in? %>
-			<% if current_user.officer %>
+			<% if !current_user.nil? && current_user.officer %>
 				<li><%= link_to 'Administrate', admin_path %></li>
 				<li>&nbsp|&nbsp</li>		
 			<% end %>
