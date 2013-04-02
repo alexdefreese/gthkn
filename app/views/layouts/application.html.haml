@@ -5,8 +5,8 @@
     = javascript_include_tag 'application'
     %link{ rel: "shortcut icon", href: "/favicon.ico" }
   %body
-    .container
-      = render partial: 'layouts/header'
+    = render partial: 'layouts/header'
+    .container  
       #content
         - flash.each do |key, value|
           .flash

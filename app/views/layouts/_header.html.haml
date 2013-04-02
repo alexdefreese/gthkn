@@ -1,5 +1,4 @@
-%header
-	= render partial: 'layouts/navbar'
+= render partial: 'layouts/navbar'
 
-	- banner = image_tag('hkn-banner.png', class: 'banner')
-	= link_to banner, root_path
+- banner = image_tag('hkn-banner.png', class: 'banner')
+.banner-container= link_to banner, root_path
