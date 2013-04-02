@@ -28,8 +28,4 @@ module ApplicationHelper
     redirect_to root_path unless current_user_is_officer?
   end
   
-  def current_user?(user)
-    user == current_user
-  end
-  
 end
