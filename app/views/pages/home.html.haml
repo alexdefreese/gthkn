@@ -1,16 +1,4 @@
 %h1 Eta Kappa Nu
 %h2 Announcements
 
-- if current_user_is_officer?
-	#newpost
-		= link_to "New Blogpost", new_blogpost_path, class: "btn btn-info"
-
-- unless @blogposts.nil? or @blogposts.empty?
-	.blog
-		= will_paginate @blogposts
-		= render partial: 'blogposts/blogpost', collection: @blogposts
-		= will_paginate @blogposts
-
-- else
-	.blog
-		%h3 No posts currently available.
+= render partial: 'layouts/blogpost_render'

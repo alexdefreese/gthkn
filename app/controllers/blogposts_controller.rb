@@ -33,6 +33,10 @@ class BlogpostsController < ApplicationController
     end
   end
 
+  def index
+    @blogposts = Blogpost.paginate(:page => params[:page], :per_page => 10)
+  end
+
   def delete
   end
 

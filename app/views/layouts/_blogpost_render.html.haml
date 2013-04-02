@@ -1,0 +1,13 @@
+- if current_user_is_officer?
+  #newpost
+    = link_to "New Blogpost", new_blogpost_path, class: "btn btn-info"
+
+- unless @blogposts.nil? or @blogposts.empty?
+  .blog
+    .pagination-centered= will_paginate @blogposts
+    = render partial: 'blogposts/blogpost', collection: @blogposts
+    .pagination-centered= will_paginate @blogposts
+
+- else
+  .blog
+    %h3 No posts currently available.

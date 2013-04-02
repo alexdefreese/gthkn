@@ -8,6 +8,7 @@ gem 'rails'
 gem 'json'
 gem 'haml'
 gem 'bootstrap-sass', '2.1'
+gem 'bootstrap-will_paginate'
 
 group :release do
   gem 'pg'

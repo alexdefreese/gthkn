@@ -33,6 +33,8 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.1.0.0)
+    bootstrap-will_paginate (0.0.9)
+      will_paginate
     builder (3.0.4)
     ckeditor (4.0.2)
       mime-types
@@ -135,6 +137,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-postgresql-adapter
   bootstrap-sass (= 2.1)
+  bootstrap-will_paginate
   ckeditor
   coffee-rails
   devise
