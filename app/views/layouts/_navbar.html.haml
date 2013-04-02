@@ -1,21 +1,20 @@
 %header.navbar.navbar-fixed-top.navbar-inverse
   .navbar-inner
-    .container
-      = link_to "HKN: Beta Mu", root_path, id: "logo"
-      %nav
-        %ul.nav
-          %li= link_to "Home",    root_path
-          %li= link_to 'About',   about_path
-          %li= link_to 'Event',   events_path
-          %li= link_to 'Corporate Relations',   corporate_path
-          %li= link_to 'Officers', officers_path
-          %li= link_to 'Contact Us', contact_path
+    = link_to "HKN: Beta Mu", root_path, id: "logo"
+    %nav
+      %ul.nav.pull-right
+        %li= link_to "Home",    root_path
+        %li= link_to 'About',   about_path
+        %li= link_to 'Event',   events_path
+        %li= link_to 'Corporate Relations',   corporate_path
+        %li= link_to 'Officers', officers_path
+        %li= link_to 'Contact Us', contact_path
 
-          - if user_signed_in?
-            - if current_user.officer
-              %li= link_to 'Administrate', admin_path
-            %li= link_to 'Profile', current_user
-            %li= link_to 'Log Out', destroy_user_session_path, method: :delete
-          - else
-            %li= link_to 'Log In', new_user_session_path
-            %li= link_to 'Sign Up', new_user_registration_path
+        - if user_signed_in?
+          - if current_user.officer
+            %li= link_to 'Administrate', admin_path
+          %li= link_to 'Profile', current_user
+          %li= link_to 'Log Out', destroy_user_session_path, method: :delete
+        - else
+          %li= link_to 'Log In', new_user_session_path
+          %li= link_to 'Sign Up', new_user_registration_path
