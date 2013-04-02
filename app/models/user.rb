@@ -46,9 +46,7 @@ class User < ActiveRecord::Base
   validates_length_of :name, :maximum => 50
   validates_format_of :email, :with => email_regex
   validates_uniqueness_of :email, :case_sensitive => false
-  
-  before_save :set_default_values, :encrypt_password
-  
+    
   def set_default_values
     self.initiate = false if self.initiate.nil?
     self.officer = false if self.officer.nil?
