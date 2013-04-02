@@ -3,7 +3,7 @@
 
 - if current_user_is_officer?
 	#newpost
-		= link_to "New Blogpost", new_blogpost_path
+		= link_to "New Blogpost", new_blogpost_path, class: "btn btn-info"
 
 - unless @blogposts.nil? or @blogposts.empty?
 	.blog
