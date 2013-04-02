@@ -1,4 +1,16 @@
 Gthkn::Application.routes.draw do
+  get "event/new"
+
+  get "event/show"
+
+  get "event/index"
+
+  get "event/edit"
+
+  get "event/update"
+
+  get "event/delete"
+
   devise_for :users
 
   resources :users

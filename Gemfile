@@ -9,6 +9,7 @@ gem 'json'
 gem 'haml'
 gem 'bootstrap-sass', '2.1'
 gem 'bootstrap-will_paginate'
+gem 'bootstrap-datepicker-rails'
 
 group :release do
   gem 'pg'
