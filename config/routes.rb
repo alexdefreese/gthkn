@@ -2,6 +2,7 @@ Gthkn::Application.routes.draw do
   devise_for :users
 
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
   resources :blogposts, :only => [:create, :edit, :update, :destroy]
   
   match '/admin/user_admin' => 'users#user_admin', :as => :user_admin
