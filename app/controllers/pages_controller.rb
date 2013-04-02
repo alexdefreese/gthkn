@@ -1,5 +1,6 @@
+include ApplicationHelper
+
 class PagesController < ApplicationController
-  before_filter :authenticate, :only => [:admin]
   before_filter :deny_unless_officer, :only => [:admin]
   
   def home

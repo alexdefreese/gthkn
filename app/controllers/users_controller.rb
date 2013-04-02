@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate, :only => [:edit, :update]
+  before_filter :authenticate_user!, :only => [:edit, :update]
   before_filter :correct_user_or_officer, :only => [:edit, :update]
   before_filter :deny_unless_officer, :only =>[:user_admin]
   
