@@ -7,6 +7,7 @@ gem 'rails'
 
 gem 'json'
 gem 'haml'
+gem 'bootstrap-sass'
 
 group :release do
   gem 'pg'
