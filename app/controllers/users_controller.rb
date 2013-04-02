@@ -4,43 +4,9 @@ class UsersController < ApplicationController
   before_filter :deny_unless_officer, :only =>[:user_admin]
   
   def show
+    redirect_to root_path if params[:id] == "sign_out"
     @user = User.find(params[:id])
     @title = @user.name
-  end
-  
-  def new
-    @user = User.new
-    @title = "Sign Up"
-  end
-
-  def edit
-    @user = User.find(params[:id])
-    @title = "Edit user"
-  end
-  
-  def update
-    @user = User.find(params[:id])
-    if params[:commit] == 'Cancel'
-      flash[:notice] = "Cancelled Edit." 
-      redirect_to user_admin_path if current_user_is_officer?
-      redirect_to @user if !current_user_is_officer?
-    else
-      
-      if @user.update_attributes(params[:user])
-        flash[:success] = "Profile updated."
-        redirect_to user_admin_path if current_user_is_officer?
-        redirect_to @user if !current_user_is_officer?
-      else
-        @title = "Edit user"
-        render 'edit'
-      end
-    end
-  end
-
-  def delete
-  end
-  
-  def index
   end
   
   def user_admin
