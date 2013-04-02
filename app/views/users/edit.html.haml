@@ -1,0 +1,47 @@
+
+%h1 Update your Profile
+.row
+	.span6.offset3
+		%fieldset
+			= form_for(@user) do |f|
+				=render 'shared/error_messages'
+
+				= f.label :name
+				= f.text_field :name
+
+				= f.label :email
+				= f.text_field :email
+
+				= f.label :show_email
+				%lable
+					= f.radio_button :show_email, true
+					Yes
+				%lable
+					= f.radio_button :show_email, false
+					No
+
+				- if current_user_is_officer?
+					= f.label :initiate
+					%lable
+						= f.radio_button :initiate, true
+						Yes
+					%lable
+						= f.radio_button :initiate, false
+						No
+
+					= f.label :officer
+					%lable
+						= f.radio_button :officer, true
+						Yes
+					%lable
+						= f.radio_button :officer, false
+						No
+
+				- if @user.officer
+					= f.label :officer_position
+					= f.text_field :officer_position
+
+				.commit
+					= f.submit "Save Changes", class: "btn btn-large btn-primary"
+					= f.submit "Cancel", class: "btn btn-large btn-warning"
+
