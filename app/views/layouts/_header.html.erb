@@ -16,7 +16,7 @@
 		<li><%= link_to 'Contact Us', contact_path %></li>
 		<li>&nbsp|&nbsp</li>
 		
-		<% if user_signed_in? %>
+		<% if signed_in? %>
 			<% if current_user.officer %>
 				<li><%= link_to 'Administrate', admin_path %></li>
 				<li>&nbsp|&nbsp</li>		
@@ -24,11 +24,11 @@
 			
 			<li><%= link_to 'Profile', current_user %></li>
 			<li>&nbsp|&nbsp</li>		
-			<li><%= link_to 'Log out', destroy_user_session_path, :method => :delete %></li>
+			<li><%= link_to 'Log out', signout_path, :method => :delete %></li>
 		<% else %>
-			<li><%= link_to 'Log in', new_user_session_path %></li>
+			<li><%= link_to 'Log in', signin_path %></li>
 			<li>&nbsp|&nbsp</li>
-			<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+			<li><%= link_to 'Sign Up', signup_path %></li>
 		<% end %>
 	</ul>
 
