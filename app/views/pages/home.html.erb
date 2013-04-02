@@ -2,6 +2,10 @@
 
 <h2>Announcements</h2>
 
+<% if current_user_is_officer? %>
+	<span class="announcement round">Hello <%= current_user.name %>, make a <%= link_to "new blog post?", new_blogpost_path %></span>
+<% end %>
+
 
 <% unless @blogposts.nil? or @blogposts.empty? %>
 	
