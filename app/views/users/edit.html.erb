@@ -1,0 +1,51 @@
+<h1>Edit user <%= @user.name %></h1>
+
+<%= form_for @user, :html => { :multipart => true } do |f| %>
+	<%= render 'shared/error_messages' %>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :avatar %>
+		<%= image_tag @user.avatar.url(:medium) unless @user.avatar_file_name.nil? %>
+		<%= f.file_field :avatar %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :show_email %><br />
+		<%= f.radio_button :show_email, true %><%= f.label "Yes" %>
+		<%= f.radio_button :show_email, false %><%= f.label "No" %>
+	</div>
+
+	<% if current_user_is_officer? %>
+		<div class="field">
+			<%= f.label :initiate %>
+			<%= f.radio_button :initiate, true %><%= f.label "Yes" %>
+			<%= f.radio_button :initiate, false %><%= f.label "No" %>
+		</div>
+	
+		<div class="field">
+			<%= f.label :officer %>
+			<%= f.radio_button :officer, true %><%= f.label "Yes" %>
+			<%= f.radio_button :officer, false %><%= f.label "No" %>
+		</div>
+	<% end %>
+	
+	<% if @user.officer %>
+		<div class="field">
+			<%= f.label :officer_position %>
+			<%= f.text_field :officer_position %>
+		</div>
+	<% end %>
+	
+	<div class="commit">
+		<%= f.submit "Update" %>
+		<%= f.submit "Cancel" %>
+	</div>
+<% end %>
