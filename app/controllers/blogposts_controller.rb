@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
   
-  before_filter :deny_unless_officer
+  #before_filter :deny_unless_officer
   
   def new
     @title = "New Blog Post"
