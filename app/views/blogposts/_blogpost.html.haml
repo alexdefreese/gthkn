@@ -1,0 +1,14 @@
+.blogpost
+  .title-row
+    %span.title
+      = blogpost.title ||= "No Title"
+    - if current_user_is_officer?
+      %span.edit
+        = link_to "Edit", edit_blogpost_path(blogpost), class: "btn btn-primary"
+  .post-content
+    = raw blogpost.content ||= "No Content"
+  %small.timestamp
+    Posted By
+    = link_to blogpost.user.name, blogpost.user
+    = time_ago_in_words(blogpost.created_at)
+    ago.

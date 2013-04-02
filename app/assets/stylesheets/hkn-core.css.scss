@@ -128,6 +128,47 @@ body {
 	}
 }
 
+/* Blog */
+
+.blog {
+	.blogpost {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: white;
+		border: 1px solid black;
+		margin-top: 1em;
+		margin-bottom: 1em;
+
+		.title-row {
+			padding-top: .5em;
+			width: 100%;
+
+			.title {
+				font-size: 1.7em;
+				font-weight: bold;
+				margin-left: .5em;
+			}
+
+			.edit {
+				margin-right: 1em;
+				clear: both;
+				float: right;
+			}
+		}
+
+		.post-content {
+			padding-left: 1.3em;
+			padding-right: 1.3em;
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
+		.timestamp {
+			padding-left: .5em;
+		}
+	}
+}
+
 /* Footer */
 
 footer {
