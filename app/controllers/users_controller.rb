@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_filter :deny_unless_officer, :only =>[:user_admin]
   
   def show
-    redirect_to root_path if params[:id] == "sign_out"
     @user = User.find(params[:id])
     @title = @user.name
   end
