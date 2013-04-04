@@ -42,6 +42,28 @@ class EventsController < ApplicationController
     end
   end
 
+  def attend
+    if user_signed_in?
+      @event = Event.find(params[:id])
+      if not @event.nil?
+        if !current_user.events.include?(@event)
+          flash[:success] = "Thank you for attending #{@event.title}!"
+          current_user.events << @event
+          redirect_to @event
+        else
+          flash[:warning] = "You are already attending this event."
+          redirect_to @event
+        end
+      else
+        flash[:error] = "Event not found"
+        redirect_to current_user
+      end
+    else
+      flash[:error] = "You are not signed in. Please sign in to attend events."
+      redirect_to signin_path
+    end
+  end
+
   def delete
   end
 end
