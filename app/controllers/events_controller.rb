@@ -20,6 +20,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @title = @event.title
   end
 
   def index
@@ -28,7 +29,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
-    @title = "Edit Event"
+    @title = "Edit Event: #{@event.title}"
   end
 
   def update

@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   default_scope :order => 'email ASC'
   
   has_many :blogposts
-  has_many :events
+  has_and_belongs_to_many :events
   
   # Validations
   

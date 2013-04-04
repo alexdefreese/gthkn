@@ -1,0 +1,15 @@
+%h1= @event.title
+.event
+  .date
+    - if @event.date_occurred >= Date.today
+      = "Occurring: " + @event.date_occurred.to_s
+    - else
+      = "Occurred: " + @event.date_occurred.to_s
+  %h2 Event Description
+  .description= @event.description
+
+.attendees
+  %h2 Attendees
+  %ul
+    - @event.users.each do |u|
+      %li= link_to u.name, u
