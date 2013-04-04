@@ -18,6 +18,7 @@ class PagesController < ApplicationController
   end
 
   def events
+    @events = Event.all
     @title = "Events"
   end
 

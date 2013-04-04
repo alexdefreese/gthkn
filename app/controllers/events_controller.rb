@@ -1,6 +1,6 @@
 include ApplicationHelper
 
-class EventController < ApplicationController
+class EventsController < ApplicationController
   before_filter :deny_unless_officer, only: [:new, :create, :edit, :update, :delete]
 
   def new
@@ -9,12 +9,12 @@ class EventController < ApplicationController
   end
 
   def create
-    @event = Event.build(params[:event])
+    @event = Event.new(params[:Event])
     if @event.save
       flash[:success] = "Event created"
-      redirect_to event_path
+      redirect_to @event
     else
-      render 'events#new'
+      render 'new'
     end
   end
 
@@ -42,8 +42,5 @@ class EventController < ApplicationController
   end
 
   def delete
-  end
-
-  def create
   end
 end

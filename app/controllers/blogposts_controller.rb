@@ -1,6 +1,6 @@
 class BlogpostsController < ApplicationController
   
-  before_filter :deny_unless_officer
+  before_filter :deny_unless_officer, only: [:new, :create, :edit, :update, :delete]
   
   def new
     @title = "New Blog Post"
