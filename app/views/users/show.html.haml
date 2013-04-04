@@ -1,0 +1,10 @@
+%h1= @user.name
+- if @user.show_email
+  .lable Email:
+  = mail_to @user.email, nil, encode: 'javascript'
+%h2 Events
+- @user.events.each do |event|
+  .event
+    %span.title= event.title
+    %span.date= event.date_occurred
+    %span.unsub= link_to "Remove", '#', class: 'btn btn-small btn-danger'
