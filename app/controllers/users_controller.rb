@@ -33,12 +33,13 @@ class UsersController < ApplicationController
     @users = User.search(params[:search], params[:type])
     @title = "Admin Search Results"
   end
-  
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to root_path unless current_user == @user
+  end
+
   private
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to root_path unless current_user == @user
-    end
 
     def correct_user_or_officer
       if !current_user.officer

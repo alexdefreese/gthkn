@@ -64,6 +64,21 @@ class EventsController < ApplicationController
     end
   end
 
+  def unattend
+    if user_signed_in?
+      @event = Event.find(params[:id])
+      if !@event.nil? and current_user.events.include?(@event)
+        flash[:success] = "You are no longer attending #{@event.title}."
+        current_user.events.delete(@event)
+        redirect_to current_user
+      else
+        flash[:error] = "You are not currently attending this event."
+        redirect_to root_path
+      end
+    end
+  end
+
+
   def delete
   end
 end

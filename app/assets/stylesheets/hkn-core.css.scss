@@ -104,6 +104,11 @@ body {
 	background-color: #eee;
 }
 
+.lable {
+	font-weight: bold;
+
+}
+
 /* Flash */
 
 .flash {
@@ -165,6 +170,38 @@ body {
 		}
 		.timestamp {
 			padding-left: .5em;
+		}
+	}
+}
+
+/* Events */
+.events {
+	list-style: none;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	li {
+		border: 1px solid black;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		margin: .5em;
+		background-color: white;
+
+		.attend-button {
+			margin-top: 5px;
+			float: right;
+			margin-right: 1em;
+			text-align: center;
+		}
+		.title {
+			font-size: 1.3em;
+			font-weight: bold;
+			padding-bottom: 5px;
+			margin-left: .5em;
+		}
+		.date {
+			margin-left: 2em;
+			font-size: .8em;
 		}
 	}
 }

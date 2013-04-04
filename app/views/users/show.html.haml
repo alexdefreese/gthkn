@@ -3,8 +3,11 @@
   .lable Email:
   = mail_to @user.email, nil, encode: 'javascript'
 %h2 Events
-- @user.events.each do |event|
-  .event
-    %span.title= event.title
-    %span.date= event.date_occurred
-    %span.unsub= link_to "Remove", '#', class: 'btn btn-small btn-danger'
+
+%ul.events
+  - @user.events.each do |event|
+    %li.event
+      - if user_signed_in? and @user == current_user
+        %span.attend-button= link_to "Unattend", "/events/unattend/#{event.id}", class: "btn btn-warning btn-medium"
+      .title= link_to event.title, event
+      .date= event.date_occurred

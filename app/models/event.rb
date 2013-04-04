@@ -13,7 +13,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :date_occurred, :description, :id, :title
 
-  default_scope :order => 'date_occurred ASC'
+  default_scope :order => 'date_occurred DESC'
 
   validates_presence_of :title
   validates_presence_of :date_occurred
