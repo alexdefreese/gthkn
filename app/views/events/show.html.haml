@@ -10,8 +10,11 @@
 
 .attendees
   %h2 Attendees
-  - if user_signed_in? and !current_user.events.include?(@event)
-    #attend-button.right= link_to 'Attend This Event', "attend/#{params[:id]}", class: 'btn btn-large btn-primary'
+  - if user_signed_in? 
+    - if !current_user.events.include?(@event)
+      #attend-button.right= link_to 'Attend', "attend/#{params[:id]}", class: 'btn btn-large btn-primary'
+    - else
+      #attend-button.right= link_to 'Unattend', "unattend/#{params[:id]}", class: 'btn btn-large btn-warning'
   %ul
     - @event.users.each do |u|
       %li= link_to u.name, u

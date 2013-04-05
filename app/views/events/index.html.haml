@@ -1,5 +1,8 @@
 %h1 Event List
 
+- if current_user_is_officer?
+  = link_to "New Event", new_event_path, class: "btn btn-large btn-primary"
+
 .pagination-centered= will_paginate @events
 
 - unless @events.nil? or @events.empty?
@@ -7,6 +10,9 @@
     - @events.each do |event|
       %li.event
         - if user_signed_in?
+          - if current_user_is_officer?
+            %span.attend-button= link_to "Delete", '#', class: 'btn btn-danger btn-medium'
+            %span.attend-button= link_to "Edit", "/events/edit/#{event.id}", class: "btn btn-info btn-medium"
           - if !event.users.include?(current_user)
             %span.attend-button= link_to "Attend", "/events/attend/#{event.id}", class: "btn btn-primary btn-medium"
           - else
@@ -16,4 +22,4 @@
 
 .pagination-centered= will_paginate @events
 
-<iframe class="calendar" src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=hkn.tech%40gmail.com&amp;color=%232F6309&amp;src=5ide81ik2cv6lq9atsqthlsals%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe class="calendar center" src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=hkn.tech%40gmail.com&amp;color=%232F6309&amp;src=5ide81ik2cv6lq9atsqthlsals%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>

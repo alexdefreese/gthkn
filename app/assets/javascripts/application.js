@@ -4,7 +4,9 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-datepicker
+//= require bootstrap-dropdown
 
 $(function() {
   $(".datepicker").datepicker();
+  $(".dropdown-toggle").dropdown();
 });

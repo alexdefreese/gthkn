@@ -41,7 +41,3 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem 'will_paginate'
-
-gem "ckeditor"
-
-gem "paperclip"

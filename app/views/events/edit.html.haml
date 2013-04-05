@@ -1,0 +1,15 @@
+%h1 Edit Event
+
+= form_for @event do |f|
+  = render 'shared/event_error_messages'
+  = f.label :title
+  = f.text_field :title
+
+  = f.label :description
+  = f.text_area :description
+
+  = f.label :date_occurred
+  = f.text_field :date_occurred, class: 'datepicker'
+
+  .commit
+    = f.submit "Edit", class: 'btn btn-large btn-primary'
