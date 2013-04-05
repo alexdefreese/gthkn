@@ -11,7 +11,8 @@
       %li.event
         - if user_signed_in?
           - if current_user_is_officer?
-            %span.attend-button= link_to "Delete", '#', class: 'btn btn-danger btn-medium'
+            / %span.attend-button= link_to "Delete", event, method: :delete, class: 'btn btn-danger btn-medium'
+            %span.attend-button= link_to "Delete", "/events/destroy/#{event.id}", class: 'btn btn-danger btn-medium'
             %span.attend-button= link_to "Edit", "/events/edit/#{event.id}", class: "btn btn-info btn-medium"
           - if !event.users.include?(current_user)
             %span.attend-button= link_to "Attend", "/events/attend/#{event.id}", class: "btn btn-primary btn-medium"

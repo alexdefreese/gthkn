@@ -13,6 +13,8 @@
 class Event < ActiveRecord::Base
   attr_accessible :date_occurred, :description, :id, :title
 
+  before_destroy { |object| object.users.delete }
+
   default_scope :order => 'date_occurred DESC'
 
   validates_presence_of :title
