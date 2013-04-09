@@ -14,6 +14,7 @@ gem 'bootstrap-wysihtml5-rails'
 
 group :release do
   gem 'pg'
+  gem 'activerecord-postgresql-adapter'
 end
 
 group :development do
