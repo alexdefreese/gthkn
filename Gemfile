@@ -12,6 +12,8 @@ gem 'bootstrap-will_paginate'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-wysihtml5-rails'
 
+gem 'american_date'
+
 group :release do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'

@@ -2,9 +2,9 @@
 .event
   .date
     - if @event.date_occurred >= Date.today
-      = "Occurring: " + @event.date_occurred.to_s
+      = "Occurring: " + @event.date_occurred.strftime("%m/%d/%Y")
     - else
-      = "Occurred: " + @event.date_occurred.to_s
+      = "Occurred: " + @event.date_occurred.strftime("%m/%d/%Y")
   %h2 Event Description
   .description= @event.description
 

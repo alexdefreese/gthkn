@@ -19,7 +19,7 @@
           - else
             %span.attend-button= link_to "Unattend", "/events/unattend/#{event.id}", class: "btn btn-warning btn-medium"
         .title= link_to event.title, event
-        .date= event.date_occurred
+        .date= event.date_occurred.strftime("%m/%d/%Y")
 
 .pagination-centered= will_paginate @events
 

@@ -8,7 +8,10 @@
 //= require bootstrap-wysihtml5
 
 $(function() {
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({
+    autoclose: true
+  });
+
   $(".dropdown-toggle").dropdown();
 
   $(".wysihtml5").each(function(i, elem) {
