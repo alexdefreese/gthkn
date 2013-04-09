@@ -150,15 +150,33 @@ body {
 		border: 1px solid black;
 		margin-top: 1em;
 		margin-bottom: 1em;
+    padding: .5em;
+
+    .post-content {
+      h1 {
+        text-align: left;
+        font-size: 1.7em;
+      }
+      h2 {
+        text-align: left;
+        font-size: 1.5em;
+      }
+      h3 {
+        text-align: left;
+        font-size: 1.3em;
+        color: #aaa;
+      }
+    }
 
 		.title-row {
 			padding-top: .5em;
 			width: 100%;
 
 			.title {
-				font-size: 1.7em;
+				font-size: 2em;
 				font-weight: bold;
 				margin-left: .5em;
+        text-decoration: underline;
 			}
 
 			.edit {
@@ -261,6 +279,13 @@ input, textarea, select, .uneditable-input {
 
 input[type=text] {
   height: 30px;
+}
+
+label {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-top: 1.2em;
+  padding-bottom: 1em;
 }
 
 

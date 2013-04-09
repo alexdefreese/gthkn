@@ -10,6 +10,7 @@ gem 'haml'
 gem 'bootstrap-sass', '2.1'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-wysihtml5-rails'
 
 group :release do
   gem 'pg'

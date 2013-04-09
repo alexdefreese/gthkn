@@ -1,7 +1,5 @@
 <h1>New Blogpost</h1>
 
-<!--<%= render 'layouts/tinymce_config' %>-->
-
 <%= form_for @blogpost do |f| %>
 	<div class="field">
 		<%= f.label :title %>
@@ -9,7 +7,7 @@
 	</div>
 	<div class="field">
 		<%= f.label :content %>
-		<%= f.text_area :content %>
+		<%= f.text_area :content, class: "wysihtml5" %>
 	</div>
 	<div class="actions">
 		<%= f.submit "Submit" %>

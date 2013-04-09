@@ -5,8 +5,13 @@
 //= require jquery-ui
 //= require bootstrap-datepicker
 //= require bootstrap-dropdown
+//= require bootstrap-wysihtml5
 
 $(function() {
   $(".datepicker").datepicker();
   $(".dropdown-toggle").dropdown();
+
+  $(".wysihtml5").each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
 });
