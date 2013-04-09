@@ -1,0 +1,2 @@
+module InitiationRequirementsHelper
+end

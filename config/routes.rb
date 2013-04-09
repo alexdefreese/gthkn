@@ -7,6 +7,7 @@ Gthkn::Application.routes.draw do
   resources :users
   resources :blogposts, :only => [:create, :edit, :update, :destroy, :index]
   resources :events
+  resources :initiation_requirements only: [:create, :update]
   
   match '/admin/user_admin' => 'users#user_admin', :as => :user_admin
   match '/admin/user_admin/search' => 'users#user_admin_search', :as => :user_admin_search
