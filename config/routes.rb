@@ -1,5 +1,7 @@
 Gthkn::Application.routes.draw do
 
+  get "initiation/index"
+
   devise_for :users
 
   resources :users

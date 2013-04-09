@@ -56,6 +56,8 @@ class User < ActiveRecord::Base
   validates_length_of :name, :maximum => 50
   validates_format_of :email, :with => email_regex
   validates_uniqueness_of :email, :case_sensitive => false
+
+  has_one :initiation_requirement
     
   def set_default_values
     self.initiate = false if self.initiate.nil?

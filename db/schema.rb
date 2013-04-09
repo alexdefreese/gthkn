@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404162940) do
+ActiveRecord::Schema.define(:version => 20130409213508) do
 
   create_table "blogposts", :force => true do |t|
     t.text     "content",    :limit => 255
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(:version => 20130404162940) do
 
   add_index "events_users", ["event_id", "user_id"], :name => "index_events_users_on_event_id_and_user_id"
   add_index "events_users", ["user_id", "event_id"], :name => "index_events_users_on_user_id_and_event_id"
+
+  create_table "initiation_requirements", :force => true do |t|
+    t.boolean  "professor_invited"
+    t.boolean  "dues_paid"
+    t.boolean  "lab_chip_party_attended"
+    t.boolean  "service_project"
+    t.integer  "user_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
