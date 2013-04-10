@@ -17,4 +17,20 @@ $(function() {
   $(".wysihtml5").each(function(i, elem) {
     $(elem).wysihtml5();
   });
+
+  $('.ajax-form').submit(function(){
+    $.ajax({
+      type: this.method,
+      url: this.action,
+      data: $(this).serialize(),
+      success: function(){
+      }
+    });
+    return false;
+  });
+
+  $('.ajax-checkbox').click(function() {
+    $(this).closest('form').submit();
+  });
+  
 });

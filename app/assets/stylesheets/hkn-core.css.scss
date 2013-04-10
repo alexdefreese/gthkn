@@ -288,6 +288,24 @@ label {
   padding-bottom: 1em;
 }
 
+/* Initiation Requirement */
+.initiation {
+  .row {
+    background-color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    .name {
+      font-weight: bold;
+    }
+  }
+}
 
 
 #error_explanation {

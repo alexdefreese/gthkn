@@ -1,10 +1,19 @@
 %h1 Initiation Index
-%ul
+.initiation
   - @users.each do |user|
     - if user.initiate
-      %li
+      .row
         = form_for user.initiation_requirement, {class: "ajax-form", remote: true} do |f|
-          %span= user.name
-          %span
-            = f.lable :professor_invited
-            = f.checkbox :professor_invited, class: "ajax-checkbox"
+          .span3.name= user.name
+          .span2
+            = "Professor invited"
+            = f.check_box :professor_invited, class: "ajax-checkbox"
+          .span2
+            = "Dues"
+            = f.check_box :dues_paid, class: "ajax-checkbox"
+          .span2
+            = "Lab Chip Party"
+            = f.check_box :lab_chip_party_attended, class: "ajax-checkbox"
+          .span2
+            = "Service project"
+            = f.check_box :service_project, class: "ajax-checkbox"
