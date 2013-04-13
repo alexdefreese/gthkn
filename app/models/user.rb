@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
   
   has_many :blogposts
   has_and_belongs_to_many :events
+  has_one :initiation_requirement
   
   # Validations
   
@@ -57,7 +58,8 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => email_regex
   validates_uniqueness_of :email, :case_sensitive => false
 
-  has_one :initiation_requirement
+  after_initialize :set_default_values
+
     
   def set_default_values
     self.initiate = false if self.initiate.nil?
