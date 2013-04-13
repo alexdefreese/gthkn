@@ -350,3 +350,21 @@ label {
   margin-top: 45px;
   @include box_sizing;
 }
+
+.right {
+  text-align: right;
+}
+
+.initiation-requirements {
+  background-color: white;
+  padding: 1em;
+  .row {
+    padding: 4px;
+    .complete {
+      color: green;
+    }
+    .incomplete {
+      color: red;
+    }
+  }
+}

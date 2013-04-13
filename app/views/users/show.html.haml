@@ -2,12 +2,48 @@
 - if @user.show_email
   .lable Email:
   = mail_to @user.email, nil, encode: 'javascript'
-%h2 Events
+-if user_signed_in? and @user == current_user
+  .row.buttons
+    .span2= link_to "Edit", edit_user_path(@user), class: 'btn btn-info btn-medium'
+    - if not @user.initiate and not @user.member and not @user.officer
+      .span2= link_to "Promote to Initiate", new_initiation_requirement_path, class: 'btn btn-primary btn-medium'
+      .span2= link_to "Promote to Member", '#', class: 'btn btn-primary btn-medium'
 
-%ul.events
-  - @user.events.each do |event|
-    %li.event
-      - if user_signed_in? and @user == current_user
-        %span.attend-button= link_to "Unattend", "/events/unattend/#{event.id}", class: "btn btn-warning btn-medium"
-      .title= link_to event.title, event
-      .date= event.date_occurred
+- if @user.member or @user.officer
+  %h2 Events
+  %ul.events
+    - @user.events.each do |event|
+      %li.event
+        - if user_signed_in? and @user == current_user
+          %span.attend-button= link_to "Unattend", "/events/unattend/#{event.id}", class: "btn btn-warning btn-medium"
+        .title= link_to event.title, event
+        .date= event.date_occurred
+
+- if @user.initiate and not @user.initiation_requirement.nil?
+  %h2 Initiation Requirements
+  - requirement = @user.initiation_requirement
+  .initiation-requirements 
+    .row
+      .span4.offset2.right Professor Invited
+      - if requirement.professor_invited
+        .span2.complete Complete
+      - else
+        .span2.incomplete Incomplete
+    .row
+      .span4.offset2.right Dues Paid
+      - if requirement.dues_paid
+        .span2.complete Recieved
+      - else
+        .span2.incomplete Not Yet Recieved
+    .row
+      .span4.offset2.right Lab Chip Packaging Party Attended
+      - if requirement.lab_chip_party_attended
+        .span2.complete Complete
+      - else
+        .span2.incomplete Incomplete
+    .row
+      .span4.offset2.right Service Project
+      - if requirement.lab_chip_party_attended
+        .span2.complete Recieved
+      - else
+        .span2.incomplete Not Yet Recieved
