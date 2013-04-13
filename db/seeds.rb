@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
+
+AuthCode.create(name: 'initiate', code: 'gthkn-initiates-2013-8890')
+AuthCode.create(name: 'member', code: 'gthkn-members-2013-19928')

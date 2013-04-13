@@ -1,0 +1,2 @@
+module AuthCodeHelper
+end

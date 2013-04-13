@@ -1,5 +1,21 @@
 class InitiationRequirementsController < ApplicationController
+
+  def new
+  end
+
   def create
+    if user_signed_in?
+      if params[:auth_code] == AuthCode.find_by_name("initiate")
+        current_user.initiate = true;
+        current_user.build_initiation_requirement( { professor_invited: false, 
+          dues_paid: false, lab_chip_party_attended: false, service_project: false})
+        flash[:success] = "You are now an initiate of HKN"
+        redirect_to current_user
+      else
+        flash[:error] = "Wrong Authentication Code"
+        render :new
+      end
+    end
   end
 
   def update

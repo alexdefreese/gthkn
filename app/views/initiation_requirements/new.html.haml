@@ -1,0 +1,6 @@
+%h1 Create as Initiate
+
+= form_tag new_initiation_requirement_path
+  .authcode Initiation Auth Code
+  = text_field_tag :auth_code
+  = submit_tag 'Authenticate'
