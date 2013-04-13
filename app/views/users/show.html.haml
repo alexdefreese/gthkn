@@ -2,11 +2,11 @@
 - if @user.show_email
   .lable Email:
   = mail_to @user.email, nil, encode: 'javascript'
--if user_signed_in? and @user == current_user
+-if (user_signed_in? and @user == current_user) or current_user.officer
   .row.buttons
     .span2= link_to "Edit", edit_user_path(@user), class: 'btn btn-info btn-medium'
     - if not @user.initiate and not @user.member and not @user.officer
-      .span2= link_to "Promote to Initiate", new_initiation_requirement_path, class: 'btn btn-primary btn-medium'
+      .span2= link_to "Promote to Initiate", "/initiation_requirements/new/#{@user.id}", class: 'btn btn-primary btn-medium'
       .span2= link_to "Promote to Member", '#', class: 'btn btn-primary btn-medium'
 
 - if @user.member or @user.officer

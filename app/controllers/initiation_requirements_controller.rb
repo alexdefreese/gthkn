@@ -1,6 +1,15 @@
 class InitiationRequirementsController < ApplicationController
 
   def new
+    if user_signed_in? and current_user.officer?
+      @user = User.find(params[:id])
+      @user.initiate = true;
+      @user.build_initiation_requirement( { professor_invited: false, 
+          dues_paid: false, lab_chip_party_attended: false, service_project: false})
+      @user.save
+      flash[:success] = "User updated to initiate"
+      redirect_to user_admin_path
+    end
   end
 
   def create
