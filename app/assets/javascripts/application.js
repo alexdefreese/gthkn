@@ -3,6 +3,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require bootstrap-alert
 //= require bootstrap-datepicker
 //= require bootstrap-dropdown
 //= require bootstrap-wysihtml5

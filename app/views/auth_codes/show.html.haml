@@ -1,0 +1,9 @@
+%h1 
+  Auth Code: 
+  = @authcode.name
+%h2= @authcode.code
+
+.buttons.row
+  .span2= link_to "Edit", edit_auth_code_path(@authcode), class: 'btn btn-large btn-info'
+  - if (@authcode.name != 'initiate' and @authcode.name != 'member')
+    .span2= link_to "Delete", @authcode, method: :delete, class: 'btn btn-large btn-danger'

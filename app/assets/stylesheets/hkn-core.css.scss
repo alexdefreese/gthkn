@@ -321,6 +321,27 @@ label {
   @extend .error;
 }
 
+/* Auth Codes */
+
+.authcodes {
+  .row {
+    background-color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    .name {
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
 /* Debug Dump */
 .debug_dump {
   clear: both;

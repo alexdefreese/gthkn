@@ -1,0 +1,7 @@
+%h1= "Edit '#{@authcode.name}' Auth Code"
+
+= form_for @authcode do |f|
+  = f.label :code
+  = f.text_field :code
+
+  = f.submit 'Edit', class: 'btn btn-large btn-primary'

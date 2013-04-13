@@ -1,0 +1,12 @@
+%h1 Auth Codes
+
+= link_to "New Auth Code", new_auth_code_path, class: "btn btn-primary btn-large"
+
+.authcodes
+  - @authcodes.each do |code|
+    .row
+      .span4.name= link_to code.name, code
+      .span4.code= code.code
+      .span1= link_to "Edit", edit_auth_code_path(code), class: "btn btn-info btn-small"
+      - if (code.name != 'initiate' and code.name != 'member')
+        .span1= link_to "Delete", code, method: :delete, class: "btn btn-danger btn-small"

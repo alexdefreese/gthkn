@@ -1,0 +1,15 @@
+%h1 New Auth Code
+
+.alert
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  There should be no reason to make a new auth code.
+  Make sure you are doing this for the right reasons.
+
+= form_for @authcode do |f|
+  = f.label :name
+  = f.text_field :name
+
+  = f.label :code
+  = f.text_field :code
+
+  = f.submit 'Create', class: 'btn btn-large btn-primary'
