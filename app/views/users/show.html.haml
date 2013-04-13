@@ -7,7 +7,7 @@
     .span2= link_to "Edit", edit_user_path(@user), class: 'btn btn-info btn-medium'
     - if not @user.initiate and not @user.member and not @user.officer
       .span2= link_to "Promote to Initiate", "/initiation_requirements/new/#{@user.id}", class: 'btn btn-primary btn-medium'
-      .span2= link_to "Promote to Member", '#', class: 'btn btn-primary btn-medium'
+      .span2= link_to "Promote to Member", "/promotion/request_member_promotion/#{@user.id}", class: 'btn btn-primary btn-medium'
 
 - if @user.member or @user.officer
   %h2 Events

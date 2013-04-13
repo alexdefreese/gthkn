@@ -11,6 +11,10 @@ Gthkn::Application.routes.draw do
   match '/admin/user_admin' => 'users#user_admin', :as => :user_admin
   match '/admin/user_admin/search' => 'users#user_admin_search', :as => :user_admin_search
   match '/admin/initiation' => 'promotions#initiation', as: :initiation
+
+  match '/promotion/member_request/:id' => 'promotions#request_member_promotion', 
+    as: :member_promote_request
+  match '/promotion/member' => 'promotions#member_promote', as: :member_promote
   
   match '/:controller(/:action(/:id))'
   
