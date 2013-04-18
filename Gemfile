@@ -19,8 +19,17 @@ group :release do
   gem 'activerecord-postgresql-adapter'
 end
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
+end
+
+gem 'rspec-rails', group: [:test, :development]
+gem 'rb-fsevent'
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
 end
 
 # Gems used only for assets and not required
