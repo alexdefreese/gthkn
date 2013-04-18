@@ -1,10 +1,11 @@
 %h1= @wikipage.name
 - current_revision = WikiRevision.find(@wikipage.current_revision_id)
 - if not current_revision.nil?
-  .revision= current_revision.content
+  .revision= raw current_revision.content
   .author= "Laste edited by #{current_revision.user.name} #{time_ago_in_words(current_revision.created_at)} ago"
 - else
   .revision No Content
 
 .buttons
   = link_to "Edit", new_wikipage_wiki_revision_path(@wikipage), class: 'btn btn-medium btn-info'
+
