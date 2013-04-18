@@ -1,5 +1,9 @@
 Gthkn::Application.routes.draw do
 
+  resources :wikipages do
+    resources :wiki_revisions, only: [:new, :create]
+  end
+
   devise_for :users
 
   resources :users
