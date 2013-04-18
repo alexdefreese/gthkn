@@ -25,7 +25,7 @@ class WikipagesController < ApplicationController
   end
 
   def destroy
-    @wikipage = Wikipage.find(params[:id])
+    @wikipage = Wikipage.find(p arams[:id])
     @wikipage.wiki_revisions.delete_all
     @wikipage.delete
     flash[:notice] = "Page Destroyed"
