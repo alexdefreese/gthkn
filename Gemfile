@@ -6,7 +6,7 @@ gem 'rails'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'json'
-gem 'haml'
+gem 'haml-rails'
 gem 'bootstrap-sass', '2.1'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-datepicker-rails'
