@@ -1,3 +1,6 @@
+.left= link_to "<-- Return to Index", wikipages_path, class: 'btn btn-medium btn-primary'
+
+
 %h1= @wikipage.name
 - current_revision = WikiRevision.find(@wikipage.current_revision_id)
 - if not current_revision.nil?
