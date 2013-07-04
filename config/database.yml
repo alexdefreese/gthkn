@@ -20,9 +20,9 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql
   encoding: utf8
-  database: gthkn_development
+  database: rails
   pool: 5
-  username:
-  password:
+  username: rails
+  password: 89cBlsFgvc
