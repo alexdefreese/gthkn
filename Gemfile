@@ -15,7 +15,8 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'american_date'
 
 group :release do
-  gem 'mysql2'
+  gem 'pg'
+  gem 'activerecord-postgresql-adapter'
 end
 
 group :development, :test do
