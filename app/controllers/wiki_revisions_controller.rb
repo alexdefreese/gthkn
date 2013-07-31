@@ -17,4 +17,9 @@ class WikiRevisionsController < ApplicationController
     @wikipage.save
     redirect_to @wikipage, notice: "Page Edited"
   end
+
+  def index
+    @wikipage = Wikipage.find(params[:wikipage_id])
+    @revisions = @wikipage.wiki_revisions
+  end
 end

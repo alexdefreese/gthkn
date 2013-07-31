@@ -1,14 +1,19 @@
 %h1 Wiki Index
 
-.button= link_to "New Wikipage", new_wikipage_path, class: 'btn btn-success btn-large'
 
-.pagination-centered= will_paginate @wikipages
-.wiki-list
-  %ul
-    - @wikipages.each do |page|
-      %li.wiki-preview
-        .name= link_to page.name, page
-        - revision = WikiRevision.find(page.current_revision_id)
-        .preview= truncate(revision.content, length: 25)
-        .author= "Last Edited by #{revision.user.name} #{time_ago_in_words(revision.created_at)}"
-.pagination-centered= will_paginate @wikipages
+.row-fluid
+  .span2
+    %ul.nav.nav-stacked.nav-tabs.sidebar
+      %li.active= link_to "Wiki Index", wikipages_path
+      %li= link_to "New Wikipage", new_wikipage_path
+  .span10
+    .pagination-centered= will_paginate @wikipages
+    .wiki-list
+      %ul
+        - @wikipages.each do |page|
+          %li.wiki-preview
+            .name= link_to page.name, page
+            - revision = WikiRevision.find(page.current_revision_id)
+            .preview= truncate(revision.content, length: 25)
+            .author= "Last Edited by #{revision.user.name} #{time_ago_in_words(revision.created_at)}"
+    .pagination-centered= will_paginate @wikipages

@@ -2,13 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.sidebar {
+    width: 100%;
+}
+
 .wiki-list {
     ul {
         list-style-type: none;
         li {
             background-color: #fff;
             border: 1px black solid;
-            margin: 1em;
+            margin-bottom: 1em;
+            width: 100%;
             padding: .5em;
             .name {
                 font-size: 1.5em;
@@ -26,4 +31,21 @@
             }
         }
     }
+}
+
+.form {
+    background-color: white;
+     padding-right: 2em;
+     padding-left: 2em;
+     padding-bottom: 2em;
+}
+
+.revision {
+    background-color: white;
+    padding: 2em;
+}
+
+.author {
+    font-size: .7em;
+    font-style: italic;
 }

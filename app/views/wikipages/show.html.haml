@@ -1,14 +1,16 @@
-.left= link_to "<-- Return to Index", wikipages_path, class: 'btn btn-medium btn-primary'
-
-
 %h1= @wikipage.name
 - current_revision = WikiRevision.find(@wikipage.current_revision_id)
-- if not current_revision.nil?
-  .revision= raw current_revision.content
-  .author= "Laste edited by #{current_revision.user.name} #{time_ago_in_words(current_revision.created_at)} ago"
-- else
-  .revision No Content
+.row-fluid
+  .span2
+    %ul.nav.nav-stacked.nav-tabs.sidebak
+      %li= link_to "Wiki Index", wikipages_path
+      %li= link_to "New Wikipage", new_wikipage_path
+      %li.active= link_to "Current Page", @wikipage
+      %li= link_to "Edit", new_wikipage_wiki_revision_path(@wikipage)
 
-.buttons
-  = link_to "Edit", new_wikipage_wiki_revision_path(@wikipage), class: 'btn btn-medium btn-info'
-
+  .span10
+    - if not current_revision.nil?
+      .revision= raw current_revision.content
+      .author= raw "Last edited by #{link_to current_revision.user.name, current_revision.user} #{time_ago_in_words(current_revision.created_at)} ago"
+    - else
+      .revision No Content
