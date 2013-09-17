@@ -7,9 +7,7 @@
       %li= link_to "Edit", new_wikipage_wiki_revision_path(@wikipage)
 
   .span10
-    .form
-      = form_tag wikipage_wiki_revisions_path, method: :post do
-        = label_tag :content
-        = text_area_tag :content, @latest_revision.content, class: "wysihtml5"
-
-        = submit_tag "Edit", class: 'btn btn-info btn-medium'
+    %ul.revisionlist
+      - @revisions.each do |revision|
+        %li
+          .
